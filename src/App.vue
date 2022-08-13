@@ -10,18 +10,19 @@
 import NavBar from "./components/NavBar.vue";
 import ListView from "./components/ListItem.vue";
 import GraphView from "./components/GraphItem.vue";
+import { defineComponent } from "@vue/runtime-core";
 
-export default {
+export default defineComponent({
   name: 'App',
   components: {
     NavBar,
     ListView,
     GraphView,
-},
+  },
   created(){
     this.$store.dispatch('prefectureAction');
   }
-}
+})
 </script>
 
 <style lang="scss">
