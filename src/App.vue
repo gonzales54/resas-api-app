@@ -8,7 +8,7 @@
 
 <script lang="ts">
 import NavBar from "./components/NavBar.vue";
-import ListView from "./components/ListItem.vue";
+import ListView from "./components/ListView.vue";
 import GraphView from "./components/GraphItem.vue";
 import { defineComponent } from "@vue/runtime-core";
 

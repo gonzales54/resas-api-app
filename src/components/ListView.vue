@@ -8,7 +8,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import ListItem from '../components/ListItem.vue';
+import ListItem from './ListItem.vue';
 
 export default defineComponent({
   name: 'HomeView',
