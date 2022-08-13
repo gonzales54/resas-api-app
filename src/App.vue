@@ -7,9 +7,9 @@
 </template>
 
 <script lang="ts">
-import ListView from "./views/ListView.vue";
 import NavBar from "./components/NavBar.vue";
-import GraphView from "./views/GraphView.vue";
+import ListView from "./components/ListItem.vue";
+import GraphView from "./components/GraphItem.vue";
 
 export default {
   name: 'App',
