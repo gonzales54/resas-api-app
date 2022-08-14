@@ -19,9 +19,6 @@ export default defineComponent({
     ListView,
     GraphView,
   },
-  created(){
-    this.$store.dispatch('prefectureAction');
-  }
 })
 </script>
 

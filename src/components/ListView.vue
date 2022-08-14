@@ -15,6 +15,9 @@ export default defineComponent({
   components: {
     ListItem,
   },
+  created(){
+    this.$store.dispatch('prefectureAction');
+  }
 })
 </script>
 

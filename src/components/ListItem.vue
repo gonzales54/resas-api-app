@@ -14,8 +14,8 @@ export default defineComponent({
   name: 'ListItem',
   props: {
     item: {
-        type: Object, 
-        required: true
+      type: Object, 
+      required: true
     }
   },
   methods: {

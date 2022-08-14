@@ -15,9 +15,9 @@ interface checked {
 export default createStore({
   state: {
     prefectures_list: [] as prefectures[], 
-    check_list: [] as checked[]
+    check_list: [] as checked[],
+    check_list_copy: [] as checked[],
   },
-
   getters: {
     prefectures(state) {
       return state.prefectures_list
@@ -32,10 +32,12 @@ export default createStore({
       state.prefectures_list = data
     },
     setClickItem(state, data) : void {
-      if(!isNaN(data)){
-        state.check_list = state.check_list.filter(item => item.id !== data)
+      if(typeof(data) === 'object'){
+        state.check_list_copy.push(data)
+        state.check_list = state.check_list_copy
       }else{
-        state.check_list.push(data)
+        state.check_list_copy = state.check_list_copy.filter(item => item.id !== data)
+        state.check_list = state.check_list_copy
       }
     }
   },
@@ -55,6 +57,7 @@ export default createStore({
         throw err
       })
     },
+
     async peoplesAction({commit, state}, {num, name}) {
       const result = state.check_list.findIndex((item) => item.id === num)
       if(result !== -1){
@@ -62,7 +65,7 @@ export default createStore({
       }else{
         await axios.get(`https://opendata.resas-portal.go.jp/api/v1/population/composition/perYear?prefCode=${num}`, {
           headers: {
-            "X-API-KEY": process.env.VUE_APP_API_KEY
+            "x-api-key": process.env.VUE_APP_API_KEY
             }
           })
         .then(res => {
@@ -75,6 +78,4 @@ export default createStore({
       }
     }
   },
-  modules: {
-  }
 })
