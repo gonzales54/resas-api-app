@@ -1,6 +1,6 @@
 <template>
     <div>
-        <highcharts :options="chartOptions" class="px-3"></highcharts>
+        <highcharts v-if="Object.keys(chartOptions.series).length !== 0" :options="chartOptions" class="px-3"></highcharts>
     </div>
 </template>
 
