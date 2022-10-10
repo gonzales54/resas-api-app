@@ -29,7 +29,7 @@ export default createStore({
 
   mutations: {
     setPrefecture(state, data) : void {
-      state.prefectures_list = data
+      state.prefectures_list = data;
     },
     setClickItem(state, data) : void {
       if(typeof(data) === 'object'){
